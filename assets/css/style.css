@@ -1,0 +1,21 @@
+:root {
+    --primary-color: rgb(114, 114, 195);
+    --secondary-color: red;
+    --tertiary-color: yellow;
+}
+
+.header {
+    background-color: var(--primary-color);
+}
+
+.header-heading {
+    margin: 0px;
+}
+
+.column {
+    
+}
+
+/* .current-weather {
+    list-style-type: none;
+} */

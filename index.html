@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
-</head>
-<body>
-    <header>
-        <h1>Weather Dashboard</h1>
+  </head>
+  <body>
+    <header class="header d-flex justify-content-center align-items-center">
+      <h1 class="header-heading">Weather Dashboard</h1>
     </header>
-    <main>
-        <form id="city-submit-form">
-            <label>Enter city name</label>
-            <input id="city-search" type="text">
-            <button id="city-submit-button" type="submit">Submit</button>
-        </form>
+    <main id="container vw-100">
+        <div class="row">
+            <div class="column col-4">
+                <form id="city-submit-form">
+                    <label>Search for a city:</label>
+                    <input id="city-search" type="text" placeholder="Philadelphia" />
+                    <button id="city-submit-button" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="column col-8">
+                <div class="current-day border">
+                    <h2 class="current-city"></h2>
+                    <h2 class="current-date"></h2>
+                    <img class="weather-icon"></img>
+                    <ul class="current-weather list-unstyled">
+                        <li id=current-temp></li>
+                        <li id=current-wind></li>
+                        <li id=current-humid></li>
+                        <li id=current-uv></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div col-3></div>
+                    <div col-3></div>
+                    <div col-3></div>
+                    <div col-3></div>
+                </div>
+            </div>
+        </div>  
     </main>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>

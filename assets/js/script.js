@@ -1,7 +1,6 @@
 var citySubmitButton = document.querySelector("#city-submit-button");
 var citySubmitForm = document.querySelector("#city-submit-form");
 var citySearch = document.querySelector("#city-search");
-
 function searchCity(event) {
   event.preventDefault();
   if (citySubmitForm === null) {
@@ -43,46 +42,56 @@ function searchCity(event) {
       .then(function (data) {
         // get data for current weather
         console.log(data.current);
-        var unixDate = data.current.dt
-        var iconCode = data.current.weather[0].icon
+        var currentUnixString = data.current.dt.toString();
+        var iconCode = data.current.weather[0].icon;
         var iconSrc = "http://openweathermap.org/img/w/" + iconCode + ".png";
         var currentTemp = data.current.temp;
         var currentWind = data.current.wind_speed;
         var currentHumid = data.current.humidity;
         var currentUV = data.current.uvi;
-        // add current weather to document 
+        // add current weather to document
         var currentCity = document.querySelector(".current-city");
         currentCity.append(city);
-        // Need to convert unix to regular
-        var currentCity = document.querySelector(".current-date");
-        currentCity.append();
-        var weatherIconCurrent = document.querySelector(".weather-icon")
-        weatherIconCurrent.setAttribute("src", iconSrc)
+        // convert unix to regular
+        var date = moment.unix(currentUnixString).format("l");
+        currentCity.append(" -- " + date);
+        var weatherIconCurrent = document.querySelector(".weather-icon");
+        weatherIconCurrent.setAttribute("src", iconSrc);
         var currentTempEl = document.querySelector("#current-temp");
         var currentWindEl = document.querySelector("#current-wind");
         var currentHumidEl = document.querySelector("#current-humid");
         var currentUVEl = document.querySelector("#current-uv");
-        currentTempEl.append("Temperature: " + currentTemp + " F");
-        currentWindEl.append("Wind speed: " + currentWind + " MPH");
-        currentHumidEl.append("Humidity: " + currentHumid + "%");
-        currentUVEl.append("UV Index: " + currentUV);
+        currentUVEl.classList.add("class", "uv-background");
+        // UV Conditional
+        if (currentUV <= 2) {
+          currentUVEl.classList.add("class", "uv-background-low");
+        } else if (currentUV > 2 && currentUV < 6) {
+          currentUVEl.classList.add("class", "uv-background-moderate");
+        } else if (currentUV >= 6 && currentUV < 8) {
+          currentUVEl.classList.add("class", "uv-background-high");
+        }else if (currentUV >= 8 && currentUV < 11) {
+          currentUVEl.classList.add("class", "uv-background-very-high");
+        }else {
+          currentUVEl.classList.add("class", "uv-background-extreme");
+        }
+        currentTempEl.append(currentTemp + " F");
+        currentWindEl.append(currentWind + " MPH");
+        currentHumidEl.append(currentHumid + "%");
+        currentUVEl.append(currentUV);
         // make arrays for daily weather
         console.log(data.daily);
-        var dailyWeather = []
-        var dailyTemps = []
-        var dailyWind = []
-        var dailyHumid = []
+        var dailyWeather = [];
+        var dailyTemps = [];
+        var dailyWind = [];
+        var dailyHumid = [];
         // get data for daily weather
         for (let i = 0; i < 5; i++) {
-          dailyWeather.push(data.daily[i].weather[0].icon)
+          dailyWeather.push(data.daily[i].weather[0].icon);
           dailyTemps.push(data.daily[i].temp.day);
           dailyWind.push(data.daily[i].wind_speed);
           dailyHumid.push(data.daily[i].humidity);
-          var unixNum = data.daily[0].dt
-          var unixString = unixNum.toString()
-        } 
-        // console.log(unixString);
-        console.log(moment.unix(unixString).format("MMMM Do, YYYY"));
+          var unixString = data.daily[0].dt.toString();
+        }
       });
   }
 }
@@ -92,11 +101,10 @@ function searchCity(event) {
 
 citySubmitForm.addEventListener("submit", searchCity);
 
-
 // Left to do:
-// need to rework css 
+// need to rework css
 
 // in script:
-// need to convert unix timestamp to date format
+// on load needs to display philadelphia weather stats
 // needs to clear when searching another result
 // break down big function into smaller bits if possible

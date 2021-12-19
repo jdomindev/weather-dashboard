@@ -12,10 +12,27 @@
     margin: 0px;
 }
 
-.column {
-    
+.uv-background {
+    padding: 5px;
+    border-radius: 10px;
 }
 
-/* .current-weather {
-    list-style-type: none;
-} */
+.uv-background-extreme {
+    background-color: #d83484;
+}
+
+.uv-background-very-high {
+    background-color: #ee1d23;
+}
+
+.uv-background-high {
+    background-color: #f89c1c;
+}
+
+.uv-background-moderate {
+    background-color: #ffdc01;
+}
+
+.uv-background-low {
+    background-color: #83c88b;
+}

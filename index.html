@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
@@ -15,10 +15,9 @@
     <header class="header d-flex justify-content-center align-items-center p-3">
       <h1 class="header-heading">Weather Dashboard</h1>
     </header>
-    <section class="p-3 bg-dark">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 text-light">
+    <section class="p-3">
+        <div class="container d-sm-flex">
+          <div class="col-lg-5 col-sm-12 text-dark">
             <form id="city-submit-form">
               <div class="form-group">
                 <label><h2>Search for a city:</h2></label>
@@ -26,33 +25,32 @@
               </div>
               <button id="city-submit-button" class="btn btn-primary btn-sm w-100" type="submit">Search</button>
             </form>
+            <div>
+              <div class="searched-city list-unstyled"></div>
+            </div>
           </div>
-          <div class="col-md-8">
-              <div class="card current-day p-3 bg-secondary text-dark">
-                <div class="card-body">
-                  <h2 class="current-city"></h2>
-                  <h3 class="current-date"></h3>
-                  <img class="weather-icon"></img>
-                  <ul class="current-weather list-unstyled">
-                    <li>Temperature: <span id="current-temp"></span></li>
-                    <li>Wind speed: <span id="current-wind"></span></li>
-                    <li>Humidity: <span id="current-humid"></span></li>
-                    <li>UV Index: <span id="current-uv"></span></li>
-                  </ul>
-                </div>  
+          <div class="col-lg-11 col-sm-12">
+            <div class="row">
+              <div class="col">
+                <div class="card current-day p-3 bg-secondary text-dark">
+                  <div class="card-body">
+                    <h2 class="current-city"></h2>
+                    <h3 class="current-date"></h3>
+                    <img class="weather-icon"></img>
+                    <ul class="current-weather list-unstyled">
+                      <li>Temperature: <span id="current-temp"></span></li>
+                      <li>Wind speed: <span id="current-wind"></span></li>
+                      <li>Humidity: <span id="current-humid"></span></li>
+                      <li>UV Index: <span id="current-uv"></span></li>
+                    </ul>
+                  </div>  
+                </div>
               </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="p-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="searched-city list-unstyled"></div>
-          </div>
-            <div class="col-md-8">
-              <div class="row">
+            </div>
+            <div class="row mt-2">
+              <h4 class="px-3">5-Day Forecast:</h4>
+            </div>
+            <div class="row mt-3">
               <div class="col">
                 <div class="card bg-dark text-light">
                   <div class="card-body">
@@ -71,9 +69,7 @@
               <div class="col">Day 2</div>
               <div class="col">Day 2</div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
     <script
       type="text/javascript"

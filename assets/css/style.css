@@ -10,6 +10,10 @@ body {
     background-color: var(--secondary-color);
 }
 
+.container {
+    margin: 10px;
+}
+
 .header {
     background-color: var(--primary-color);
 }

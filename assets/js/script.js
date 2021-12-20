@@ -44,9 +44,9 @@ function searchCity(event) {
         cityEl.append(", " + currentState);
         var searchedCity = document.querySelector(".searched-city")
         var searchedEl = document.createElement("button")
-        searchedEl.classList.add("btn","btn-secondary","w-100","mt-2")
+        searchedEl.classList.add("btn","btn-dark","w-100","mt-2")
         searchedEl.append(currentCity)
-        searchedCity.append(searchedEl)
+        searchedCity.append(searchedEl) 
         // add event listener for searchedEl
 
         var requestUrl =

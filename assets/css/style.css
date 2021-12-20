@@ -1,7 +1,13 @@
 :root {
     --primary-color: rgb(114, 114, 195);
-    --secondary-color: red;
+    --secondary-color: rgb(133, 132, 136);
     --tertiary-color: yellow;
+    font-family: 'JetBrains Mono', monospace;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
 }
 
 .header {
@@ -13,8 +19,8 @@
 }
 
 .uv-background {
-    padding: 5px;
-    border-radius: 10px;
+    padding: 0px 5px;
+    border-radius: 5px;
 }
 
 .uv-background-extreme {

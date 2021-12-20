@@ -4,43 +4,77 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
   <body>
-    <header class="header d-flex justify-content-center align-items-center">
+    <header class="header d-flex justify-content-center align-items-center p-3">
       <h1 class="header-heading">Weather Dashboard</h1>
     </header>
-    <main id="container vw-100">
+    <section class="p-3 bg-dark">
+      <div class="container">
         <div class="row">
-            <div class="column col-4">
-                <form id="city-submit-form">
-                    <label>Search for a city:</label>
-                    <input id="city-search" type="text" placeholder="Philadelphia" />
-                    <button id="city-submit-button" type="submit">Search</button>
-                </form>
-            </div>
-            <div class="column col-8">
-                <div class="current-day border">
-                    <h2 class="current-city text-capitalize"></h2>
-                    <img class="weather-icon"></img>
-                    <ul class="current-weather list-unstyled">
-                        <li><span id="current-temp">Temperature: </span></li>
-                        <li><span id="current-wind">Wind speed: </span></li>
-                        <li><span id="current-humid">Humidity: </span></li>
-                        <li>UV Index: <span id="current-uv"></span></li>
+          <div class="col-md-4 text-light">
+            <form id="city-submit-form">
+              <div class="form-group">
+                <label><h2>Search for a city:</h2></label>
+                <input id="city-search" class="form-control" type="text" placeholder="Philadelphia" />
+              </div>
+              <button id="city-submit-button" class="btn btn-primary btn-sm w-100" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="col-md-8">
+              <div class="card current-day p-3 bg-secondary text-dark">
+                <div class="card-body">
+                  <h2 class="current-city"></h2>
+                  <h3 class="current-date"></h3>
+                  <img class="weather-icon"></img>
+                  <ul class="current-weather list-unstyled">
+                    <li>Temperature: <span id="current-temp"></span></li>
+                    <li>Wind speed: <span id="current-wind"></span></li>
+                    <li>Humidity: <span id="current-humid"></span></li>
+                    <li>UV Index: <span id="current-uv"></span></li>
+                  </ul>
+                </div>  
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="searched-city list-unstyled"></div>
+          </div>
+            <div class="col-md-8">
+              <div class="row">
+              <div class="col">
+                <div class="card bg-dark text-light">
+                  <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <img class="daily-icon"></img>
+                    <ul class="card-text list-unstyled">
+                      <li><span id="">Temperature: </span></li>
+                      <li><span id="">Wind speed: </span></li>
+                      <li><span id="">Humidity: </span></li>
                     </ul>
+                  </div>
                 </div>
-                <div class="row">
-                    <div col-3></div>
-                    <div col-3></div>
-                    <div col-3></div>
-                    <div col-3></div>
-                </div>
+              </div>
+              <div class="col">Day 2</div>
+              <div class="col">Day 2</div>
+              <div class="col">Day 2</div>
+              <div class="col">Day 2</div>
             </div>
-        </div>  
-    </main>
+          </div>
+        </div>
+      </div>
+    </section>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"

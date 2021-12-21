@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
-  <body>
+  <body onload="onLoad()">
     <header class="header d-flex justify-content-center align-items-center p-3">
       <h1 class="header-heading">Weather Dashboard</h1>
     </header>
     <section class="p-3">
-        <div class="container d-sm-flex">
-          <div class="col-lg-5 col-sm-12 text-dark">
+        <div class="d-flex">
+          <div class="col-lg-3 col-sm-12 text-dark">
             <form id="city-submit-form">
               <div class="form-group">
                 <label><h2>Search for a city:</h2></label>
@@ -29,7 +29,7 @@
               <div class="searched-city list-unstyled"></div>
             </div>
           </div>
-          <div class="col-lg-11 col-sm-12">
+          <div class="col-lg-9 col-sm-12">
             <div class="row">
               <div class="col">
                 <div class="card current-day p-3 bg-secondary text-dark">
@@ -38,9 +38,9 @@
                     <h3 class="current-date"></h3>
                     <img class="weather-icon"></img>
                     <ul class="current-weather list-unstyled">
-                      <li>Temperature: <span id="current-temp"></span></li>
-                      <li>Wind speed: <span id="current-wind"></span></li>
-                      <li>Humidity: <span id="current-humid"></span></li>
+                      <li id="current-temp"></li>
+                      <li id="current-wind"></li>
+                      <li id="current-humid"></li>
                       <li>UV Index: <span id="current-uv"></span></li>
                     </ul>
                   </div>  
@@ -50,24 +50,7 @@
             <div class="row mt-2">
               <h4 class="px-3">5-Day Forecast:</h4>
             </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="card bg-dark text-light">
-                  <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <img class="daily-icon"></img>
-                    <ul class="card-text list-unstyled">
-                      <li><span id="">Temperature: </span></li>
-                      <li><span id="">Wind speed: </span></li>
-                      <li><span id="">Humidity: </span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col">Day 2</div>
-              <div class="col">Day 2</div>
-              <div class="col">Day 2</div>
-              <div class="col">Day 2</div>
+            <div id="row" class="row mt-3">
             </div>
         </div>
     </section>

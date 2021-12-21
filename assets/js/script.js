@@ -6,8 +6,8 @@
 //    X THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
 //      WHEN I view future weather conditions for that city
 //    X THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-// WHEN I click on a city in the search history
-// THEN I am again presented with current and future conditions for that city
+//      WHEN I click on a city in the search history
+//    X THEN I am again presented with current and future conditions for that city
 
 // variables for search form
 var citySubmitButton = document.querySelector("#city-submit-button");
@@ -26,8 +26,8 @@ var cityEl = document.querySelector(".current-city");
 var searchedCities = document.querySelector(".searched-cities");
 
 function onLoad() {
-  // citySearch.value = "Philadelphia";
-  // searchCity(event);
+  citySearch.value = "Philadelphia";
+  searchCity(event);
   // get searched cities from local storage
   var savedSearchedCitiesTexts = JSON.parse(
     localStorage.getItem("searchedCities")
